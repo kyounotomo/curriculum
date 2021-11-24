@@ -1,0 +1,43 @@
+問1
+ブリッジプライオリティを比較すると
+Switch3＜Switch4＜Switch2＜Switch1
+
+4097＜8193＜20481＜32769
+
+よってルートブリッジはSwitch3
+
+
+問2
+
+Switch1のF0/2、Switch2のF0/1、Switch4のE0/2がルートポート
+
+Switch1からSwitch3への経路のルートパスコストを比較すると
+
+・Switch1－Switch3：100
+・Switch1－Switch2－Switch4ーSwitch3：219
+　よって、Switch3と繋がるF0/2がルートポート
+
+Switch2からSwitch3への経路のルートパスコストを比較すると
+
+・Switch2－Switch1－Switch3：119
+・Switch2－Switch4ーSwitch3：200
+よって、上の経路のF0/1がルートポート
+
+Switch4からSwitch3への経路のルートパスコストを比較すると
+
+・Switch4－Switch3：100
+・Switch4－Switch2－Switch1ーSwitch3：219
+　よって、Switch3と繋がるE0/2がルートポート
+
+
+Switch1のF0/1、Switch3のE0/1、E0/2、Switch4のE0/1が指定ポート
+
+・Switch1のF0/1は対向ポートがルートポートなので指定ポート
+・Switch3はルートブリッジのためE0/1、E0/2は指定ポート
+・Switch4とSwitch2を比較すると、Switch4の萌芽がブリッジプライオリティが小さいため、
+　指定ポート
+
+Switch2のF0/2はブロッキングポート
+
+・他のポートはルートポートと指定ポートに属しているため、
+　残ったこのポートがブロッキングポートになる。
